@@ -1,0 +1,65 @@
+.doctors-view {
+	margin-left: -10px !important;
+	margin-right: -10px !important;
+}
+
+.swiper-wrapper {
+	width: 350px !important;
+}
+.single-doctor {
+	border-radius: 10px;
+	box-shadow: 1px 2px 9px -3px rgba(99, 99, 99, 0.45);
+	margin-bottom: 10px;
+}
+.doctor-description {
+	padding: 10px 10px 20px 10px;
+}
+
+.doctor-image {
+	border-radius: 10px 10px 0px 0px;
+	width: 100%;
+	height: 100%;
+}
+
+.doctor-category {
+	color: rgb(21, 209, 200);
+	font-weight: 500;
+	font-size: 14px;
+	letter-spacing: 0.01rem;
+}
+
+.doctor-name {
+	color: #3a4256;
+}
+
+.doctor-education {
+	font-size: 12px;
+	line-height: 1rem;
+	letter-spacing: 0.01rem;
+}
+
+.collapse-btn {
+	font-size: 13px;
+	margin-left: 5px;
+	color: rgb(21, 209, 200);
+	cursor: pointer;
+}
+.department {
+	font-size: 15px;
+}
+
+.hospital {
+	font-size: 14px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+	top: 200px;
+	color: rgb(21, 209, 200);
+}
+
+@media (max-width: 700px) {
+	.swiper-slide {
+		width: 60% !important;
+	}
+}
