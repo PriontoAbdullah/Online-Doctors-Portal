@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import AppointmentBanner from '../Components/AppointmentBanner/AppointmentBanner';
 import Banner from '../Components/Banner/Banner';
 import Header from '../Components/Header/Header';
 import Infos from '../Components/Infos/Infos';
@@ -14,6 +15,7 @@ const Home = () => {
                 <Banner />
                 <Infos />
                 <Services/>
+                <AppointmentBanner/>
             </div>
         </>
     );
