@@ -1,0 +1,30 @@
+.banner-section {
+	background-image: url(../../images/banner-bg.png);
+	min-height: 100vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.img {
+	border-radius: 10px;
+	box-shadow: 0 10px 15px -15px black;
+}
+
+.banner-section h1 {
+	font-size: 40px;
+	color: #3a4256;
+}
+
+.banner-section p {
+	color: rgba(0, 0, 0, 0.7);
+}
+
+.button-style {
+	padding: 12px 18px;
+}
+
+@media (max-width: 777px) {
+	.banner-section {
+		background-size: cover;
+	}
+}

@@ -1,1 +1,90 @@
+html,
+body {
+	scroll-behavior: smooth;
+	font-family: 'Poppins', sans-serif;
+	height: 100%;
+}
+* {
+	transition: .3s;
+}
+#root {
+	height: 100%;
+}
+a:hover {
+	text-decoration: none;
+}
+.navbar-expand-sm .navbar-nav .nav-link {
+	padding-left: 1.4rem;
+}
+/* Theming */
+.btn-primary {
+	background-image: linear-gradient(75deg, #19d3ae, #0fcfec) !important;
+	border-color: transparent !important;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+.text-primary {
+	color: #1cc7c1 !important;
+}
+.btn-info {
+	background-color: #76c5ff !important;
+	border-color: transparent !important;
+}
+.btn-warning {
+	background-color: #ffd076 !important;
+	border-color: transparent !important;
+}
+.btn-success {
+	background-color: #38af86 !important;
+	border-color: transparent !important;
+}
+.btn-danger {
+	background-color: #ff7676 !important;
+	border-color: transparent !important;
+}
+.bg-primary {
+	background-color: #1cc7c1 !important;
+}
+.bg-dark {
+	background-color: #3a4256 !important;
+}
+.bg-info {
+	background-color: #3da5f4 !important;
+}
+.bg-success {
+	background-color: #00c689 !important;
+}
+.bg-warning {
+	background-color: #fda006 !important;
+}
+.bg-danger {
+	background-color: #f1536e !important;
+}
 
+p {
+	line-height: 2;
+}
+
+.logo-name {
+	font-weight: 500;
+	font-size: 22px;
+}
+
+.heder-content {
+	height: 100vh;
+	position: relative;
+}
+
+.heder-content::after {
+	z-index: -50;
+	height: 100vh;
+	content: ' ';
+	position: absolute;
+	top: 0;
+	width: 33%;
+	right: 0;
+	background-color: #3a4256;
+}
+.text-gray {
+	color: rgba(255, 255, 255, 0.75) !important;
+}
