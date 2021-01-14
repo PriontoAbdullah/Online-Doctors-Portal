@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import AppointmentBanner from '../Components/AppointmentBanner/AppointmentBanner';
 import Banner from '../Components/Banner/Banner';
+import Blogs from '../Components/Blogs/Blogs';
+import FeaturedService from '../Components/FeaturedService/FeaturedService';
 import Features from '../Components/Features/Features';
 import Header from '../Components/Header/Header';
 import Infos from '../Components/Infos/Infos';
@@ -20,6 +22,8 @@ const Home = () => {
                 <AppointmentBanner/>
                 <Features />
                 <Testimonials/>
+                <FeaturedService/>
+                <Blogs/>
             </div>
         </>
     );
