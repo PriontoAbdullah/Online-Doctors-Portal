@@ -5,6 +5,7 @@ import Blogs from '../Components/Blogs/Blogs';
 import Contact from '../Components/Contact/Contact';
 import FeaturedService from '../Components/FeaturedService/FeaturedService';
 import Features from '../Components/Features/Features';
+import Footer from '../Components/Footer/Footer';
 import Header from '../Components/Header/Header';
 import Infos from '../Components/Infos/Infos';
 import Services from '../Components/Services/Services';
@@ -26,6 +27,7 @@ const Home = () => {
                 <FeaturedService/>
                 <Blogs/>
                 <Contact/>
+                <Footer/>
             </div>
         </>
     );
