@@ -69,7 +69,25 @@
 }
 
 .carousel {
-	position: absolute;
 	top: 0;
 	left: 0;
+}
+
+@media (max-width: 600px) {
+	#features h4 {
+		font-size: 18px;
+		padding: 0 20px;
+	}
+
+	#features h6 {
+		font-size: 20px;
+		line-height: 30px;
+		margin-bottom: 5px;
+	}
+	#features p {
+		margin-bottom: 10px;
+		font-size: 14px;
+		line-height: 20px;
+		margin-bottom: 25px;
+	}
 }

@@ -89,6 +89,51 @@ p {
 	right: 0;
 	background-color: #3a4256;
 }
+
+@media (max-width: 777px) {
+	.heder-content::after {
+		background-color: transparent;
+	}
+	.navbar-light .navbar-nav .nav-link {
+		color: rgba(0, 0, 0, .5) !important;
+	}
+	.features-service h1 {
+		font-size: 25px;
+	}
+}
+
 .text-gray {
 	color: rgba(255, 255, 255, 0.75) !important;
+}
+.login-page .form-control {
+	border: none;
+	border-radius: 0;
+	border-bottom: 1px solid lightgray;
+	padding-right: 0;
+	padding-left: 0;
+}
+.login-page .form-control:focus {
+	box-shadow: none !important;
+	border-bottom: 1px solid #1cc7c1;
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 8px !important;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: rgb(251, 251, 251) !important;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #efefef !important;
+	border-radius: 5px !important;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: rgb(176, 178, 180) !important;
 }

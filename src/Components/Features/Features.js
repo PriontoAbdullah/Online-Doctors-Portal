@@ -61,7 +61,7 @@ const Features = () => {
 							illness or health issues through video calling.
 						</h4>
 					</div>
-					<div className="col-lg-6 col-md-12 col-sm-12 align-self-center">
+					<div className="col-md-6 align-self-center">
 						<ul>
 							{features.map((feature) => (
 								<li key={feature.icon}>
@@ -78,7 +78,7 @@ const Features = () => {
 							))}
 						</ul>
 					</div>
-					<div className="col-lg-6 col-md-12 col-sm-12">
+					<div className="col-md-6">
 						<Carousel
 							activeIndex={activeIndex}
 							next={next}

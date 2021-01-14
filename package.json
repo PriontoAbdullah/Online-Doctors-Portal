@@ -24,6 +24,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "reactstrap": "^8.8.1",
+    "swiper": "^6.4.5",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

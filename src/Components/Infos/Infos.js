@@ -1,7 +1,7 @@
 import React from 'react';
-import InfoCard from '../InfoCard/InfoCard';
 import infos from '../../Data/infos';
-import './Infos.css'
+import InfoCard from '../InfoCard/InfoCard';
+import './Infos.css';
 const Infos = () => {
     return (
         <div className="infos">

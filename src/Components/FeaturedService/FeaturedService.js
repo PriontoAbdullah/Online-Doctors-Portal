@@ -10,9 +10,9 @@ const FeaturedService = () => {
                         <p className="text-secondary my-5" style={{fontSize:'20px'}}>
                         Join Our Online Doctors Portal Team and Create your Virtual Chamber. Provide Medical Consultancy via video call and expand the reach of your service. We have a strong network of Bangladeshi registered doctors that you can trust.
                         </p>
-                        <button className="btn btn-primary button-style">Sign Up</button>
+                        <button className="btn btn-primary button-style mb-5">Sign Up</button>
                     </div>
-                    <div className="col-md-5 mb-4 m-md-0">
+                    <div className="col-md-5 mb-4">
                         <img className="img-fluid" src={featuredImg} alt="doctor-need"/>
                     </div>
                 </div>

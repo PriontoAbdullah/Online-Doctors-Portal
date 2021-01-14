@@ -3,6 +3,7 @@ import AppointmentBanner from '../Components/AppointmentBanner/AppointmentBanner
 import Banner from '../Components/Banner/Banner';
 import Blogs from '../Components/Blogs/Blogs';
 import Contact from '../Components/Contact/Contact';
+import Doctors from '../Components/Doctors/Doctors';
 import FeaturedService from '../Components/FeaturedService/FeaturedService';
 import Features from '../Components/Features/Features';
 import Footer from '../Components/Footer/Footer';
@@ -22,6 +23,7 @@ const Home = () => {
                 <Infos />
                 <Services/>
                 <AppointmentBanner/>
+                <Doctors/>
                 <Features />
                 <Testimonials/>
                 <FeaturedService/>

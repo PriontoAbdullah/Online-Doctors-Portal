@@ -4,7 +4,7 @@ import Service from '../Service/Service';
 
 const Services = () => {
     return (
-        <section className="services mb-5">
+        <section className="services mb-5 pt-0">
             <div className="container">
                 <div className="section-header text-center">
                     <h5 className="text-uppercase text-primary">Our services</h5>

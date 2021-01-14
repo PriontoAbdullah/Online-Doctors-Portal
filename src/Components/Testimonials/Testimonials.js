@@ -11,7 +11,7 @@ const Testimonials = () => {
                    <h5 className="text-primary text-uppercase">Testimonial</h5>
                    <h1 className="style-color ">What Our Patients <br/> Says </h1>
                </div>
-               <div className="card-deck mt-4">
+               <div className="card-deck mt-4 mb-5">
                     {
                         testimonials.map(testimonial => <Testimonial testimonial={testimonial}/>)
                     }
