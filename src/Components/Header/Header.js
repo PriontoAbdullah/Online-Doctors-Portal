@@ -5,13 +5,16 @@ import '../../App.css';
 const Header = () => {
 	const [ isSticky, setSticky ] = useState(false);
 	const [ isCollapsed, setCollapsed ] = useState(null);
+	const [navStyle, setNavStyle] = useState('text-gray');
 
 	useEffect(() => {
 		window.addEventListener('scroll', () => {
 			if (window.scrollY > 50) {
 				setSticky(true);
+				setNavStyle('');
 			} else {
 				setSticky(false);
+				setNavStyle('text-gray');
 			}
 		});
 	}, []);
@@ -54,17 +57,17 @@ const Header = () => {
 							</Link>
 						</li>
 						<li className="nav-item">
-							<Link className="nav-link text-gray" to="/doctor">
+							<Link className={`nav-link ${navStyle}`} to="/doctor">
 								Dashboard
 							</Link>
 						</li>
 						<li className="nav-item">
-							<Link className="nav-link text-gray" to="/blog">
-								Blog
+							<Link className={`nav-link ${navStyle}`}  to="/review">
+								Reviews
 							</Link>
 						</li>
 						<li className="nav-item">
-							<Link className="nav-link text-gray" to="/contact">
+							<Link className={`nav-link ${navStyle}`}  to="/contact">
 								Contact Us
 							</Link>
 						</li>
