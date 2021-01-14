@@ -65,6 +65,10 @@ p {
 	line-height: 2;
 }
 
+.style-color {
+	color: #3a4256;
+}
+
 .logo-name {
 	font-weight: 500;
 	font-size: 22px;

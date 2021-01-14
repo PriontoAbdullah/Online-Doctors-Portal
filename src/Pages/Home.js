@@ -5,6 +5,7 @@ import Features from '../Components/Features/Features';
 import Header from '../Components/Header/Header';
 import Infos from '../Components/Infos/Infos';
 import Services from '../Components/Services/Services';
+import Testimonials from '../Components/Testimonials/Testimonials';
 
 const Home = () => {
     useEffect(() => {window.scrollTo(0,0)}, [])
@@ -18,6 +19,7 @@ const Home = () => {
                 <Services/>
                 <AppointmentBanner/>
                 <Features />
+                <Testimonials/>
             </div>
         </>
     );
