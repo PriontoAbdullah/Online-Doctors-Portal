@@ -4,6 +4,7 @@ import './App.css';
 import doctors from './Data/doctors';
 import Appointment from './Pages/Appointment';
 import Home from './Pages/Home';
+import Reviews from './Pages/Reviews';
 export const DataContext = createContext();
 export const CalenderContext = createContext();
 
@@ -42,6 +43,9 @@ function App() {
 						</Route>
 						<Route path="/appointment">
 							<Appointment />
+						</Route>
+						<Route path="/reviews">
+							<Reviews />
 						</Route>
 					</Switch>
 				</Router>
