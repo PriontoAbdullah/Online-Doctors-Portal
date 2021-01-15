@@ -1,6 +1,8 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
+import Login from './Components/Authentication/Login';
+import { AuthProvider } from './Components/Authentication/useAuth';
 import doctors from './Data/doctors';
 import Appointment from './Pages/Appointment';
 import Contacts from './Pages/Contacts';
@@ -36,6 +38,7 @@ function App() {
 	const calenderContextValue = { date, setDate };
 
 	return (
+		<AuthProvider>
 		<DataContext.Provider value={contextData}>
 			<CalenderContext.Provider value={calenderContextValue}>
 				<Router>
@@ -52,6 +55,9 @@ function App() {
 						<Route path="/contact">
 							<Contacts />
 						</Route>
+						<Route exact path="/dashboard">
+							<Login />
+						</Route>
 						<Route path="*">
 							<NotFound />
 						</Route>
@@ -59,6 +65,7 @@ function App() {
 				</Router>
 			</CalenderContext.Provider>
 		</DataContext.Provider>
+		</AuthProvider>
 	);
 }
 
