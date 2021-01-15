@@ -5,6 +5,7 @@ import doctors from './Data/doctors';
 import Appointment from './Pages/Appointment';
 import Contacts from './Pages/Contacts';
 import Home from './Pages/Home';
+import NotFound from './Pages/NotFound';
 import Reviews from './Pages/Reviews';
 export const DataContext = createContext();
 export const CalenderContext = createContext();
@@ -50,6 +51,9 @@ function App() {
 						</Route>
 						<Route path="/contact">
 							<Contacts />
+						</Route>
+						<Route path="*">
+							<NotFound />
 						</Route>
 					</Switch>
 				</Router>
