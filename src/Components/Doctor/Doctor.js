@@ -38,7 +38,7 @@ const Doctor = ({ doctorsData }) => {
 				<h6 className="department">{department}</h6>
 				<h6 className="hospital">{hospital}</h6>
 				<div className="text-center">
-					<Link to="">
+					<Link to="/appointment">
 						<button className="btn btn-primary button-style mt-3">
 							<FontAwesomeIcon icon={faCalendarCheck} className="mr-3" /> Book Appointment
 						</button>

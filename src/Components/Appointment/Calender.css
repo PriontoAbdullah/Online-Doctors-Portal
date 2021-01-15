@@ -40,3 +40,14 @@
 .react-calendar__tile {
 	padding: 1em 0.5em;
 }
+.react-calendar__tile--now {
+	background: #3a42569c;
+	color: #fff;
+}
+
+@media (max-width: 600px) {
+	.calender-area {
+		top: 50px;
+		margin-bottom: 30px;
+	}
+}

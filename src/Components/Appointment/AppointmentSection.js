@@ -17,7 +17,7 @@ const AppointmentSection = () => {
                     </div>
 
                     <div className="col-md-6 align-self-center">
-                        <img className="img-fluid" src={BannerImg} alt="banner"/>
+                        <img className="img" src={BannerImg} alt="banner" width="120%" />
                     </div>
                 </div>
             </div>
