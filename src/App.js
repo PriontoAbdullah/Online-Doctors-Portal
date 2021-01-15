@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import doctors from './Data/doctors';
 import Appointment from './Pages/Appointment';
+import Contacts from './Pages/Contacts';
 import Home from './Pages/Home';
 import Reviews from './Pages/Reviews';
 export const DataContext = createContext();
@@ -46,6 +47,9 @@ function App() {
 						</Route>
 						<Route path="/reviews">
 							<Reviews />
+						</Route>
+						<Route path="/contact">
+							<Contacts />
 						</Route>
 					</Switch>
 				</Router>

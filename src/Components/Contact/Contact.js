@@ -1,5 +1,6 @@
 import React from 'react';
 import './Contact.css';
+
 const Contact = () => {
     return (
        <section className="contact my-5 py-5">
