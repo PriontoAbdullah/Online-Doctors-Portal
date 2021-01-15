@@ -2,7 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import BannerImg from '../../images/banner-img.jpg';
 import './Banner.css';
+
 const Banner = () => {
+	
 	return (
 		<section className="banner-section">
 			<div className="container">

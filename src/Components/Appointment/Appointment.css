@@ -1,0 +1,20 @@
+.appointment-section{
+    background-image: url(../../images/banner-bg.png);
+    background-size: cover;
+    height: 100vh;
+}
+.appointment-card{
+    border: none ;
+    box-shadow: 0 0 10px #f3f0f0b0;
+}
+
+.appointment-card p{
+    font-size: 14px;
+    font-weight: 200;
+}
+.my-modal{
+    position: fixed;
+    width: 40%;
+    height: 400px;
+    background: #000;
+}

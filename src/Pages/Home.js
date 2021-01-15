@@ -13,26 +13,26 @@ import Services from '../Components/Services/Services';
 import Testimonials from '../Components/Testimonials/Testimonials';
 
 const Home = () => {
-    useEffect(() => {window.scrollTo(0,0)}, [])
-    
-    return (
-        <>
-            <div className="heder-content">
-                <Header />
-                <Banner />
-                <Infos />
-                <Services/>
-                <AppointmentBanner/>
-                <Doctors/>
-                <Features />
-                <Testimonials/>
-                <FeaturedService/>
-                <Blogs/>
-                <Contact/>
-                <Footer/>
-            </div>
-        </>
-    );
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
+	return (
+		<div className="heder-content">
+			<Header />
+			<Banner />
+			<Infos />
+			<Services />
+			<AppointmentBanner />
+			<Doctors />
+			<Features />
+			<Testimonials />
+			<FeaturedService />
+			<Blogs />
+			<Contact />
+			<Footer />
+		</div>
+	);
 };
 
 export default Home;

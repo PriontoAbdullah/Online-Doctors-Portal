@@ -40,7 +40,7 @@ const Doctor = ({ doctorsData }) => {
 				<div className="text-center">
 					<Link to="">
 						<button className="btn btn-primary button-style mt-3">
-							<FontAwesomeIcon icon={faCalendarCheck} className="mr-3" /> Make Appointment
+							<FontAwesomeIcon icon={faCalendarCheck} className="mr-3" /> Book Appointment
 						</button>
 					</Link>
 				</div>

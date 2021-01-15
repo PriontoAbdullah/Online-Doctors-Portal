@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../../App.css';
+import logo from '../../images/logo.png';
 
 const Header = () => {
 	const [ isSticky, setSticky ] = useState(false);
@@ -30,7 +31,7 @@ const Header = () => {
 		>
 			<div className="container">
 				<Link className="navbar-brand" to="/" style={{ color: '#15D1C8' }}>
-					<span className="logo-name"> Online Doctor's Portal </span>
+					<img src={logo} alt="logo"/><span className="logo-name"> Online Doctor's Portal </span>
 				</Link>
 				<button
 					onClick={() => setCollapsed(!isCollapsed ? 'show' : null)}
