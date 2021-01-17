@@ -20,14 +20,29 @@ function App() {
 	const [ preLoaderVisibility, setPreLoaderVisibility ] = useState(true);
 
 	// Load all Doctors Information
-	useEffect(() => {
-		fetch("http://localhost:5000/doctors")
-		.then(res => res.json())
-		.then(data => {
-		  setAllAppointments(data);
-		  setPreLoaderVisibility(false);
-		})
-	  }, [allAppointments.length])
+	useEffect(
+		() => {
+			fetch('http://localhost:5000/doctors').then((res) => res.json()).then((data) => {
+				setAllAppointments(data);
+				setPreLoaderVisibility(false);
+			});
+		},
+		[ allAppointments.length ]
+	);
+
+	// Load all Appointments and Patients Information
+	useEffect(
+		() => {
+			fetch('http://localhost:5000/bookedAppointments')
+				.then((res) => res.json())
+				.then((data) => setAllBookedAppointments(data));
+
+			
+		},
+		[ allBookedAppointments.length ]
+
+		
+	);
 
 	const contextData = {
 		loggedInUser,
@@ -43,35 +58,35 @@ function App() {
 	const calenderContextValue = { date, setDate };
 
 	return (
-			<DataContext.Provider value={contextData}>
-				<CalenderContext.Provider value={calenderContextValue}>
-					<Router>
-						<Switch>
-							<Route exact path="/">
-								<Home />
-							</Route>
-							<Route path="/appointment">
-								<Appointment />
-							</Route>
-							<Route path="/reviews">
-								<Reviews />
-							</Route>
-							<Route path="/contact">
-								<Contacts />
-							</Route>
-							<Route exact path="/dashboard">
-								<Login />
-							</Route>
-							<Route path="/dashboard/dashboard">
-								<Dashboard />
-							</Route>
-							<Route path="*">
-								<NotFound />
-							</Route>
-						</Switch>
-					</Router>
-				</CalenderContext.Provider>
-			</DataContext.Provider>
+		<DataContext.Provider value={contextData}>
+			<CalenderContext.Provider value={calenderContextValue}>
+				<Router>
+					<Switch>
+						<Route exact path="/">
+							<Home />
+						</Route>
+						<Route path="/appointment">
+							<Appointment />
+						</Route>
+						<Route path="/reviews">
+							<Reviews />
+						</Route>
+						<Route path="/contact">
+							<Contacts />
+						</Route>
+						<Route exact path="/dashboard">
+							<Login />
+						</Route>
+						<Route path="/dashboard/dashboard">
+							<Dashboard />
+						</Route>
+						<Route path="*">
+							<NotFound />
+						</Route>
+					</Switch>
+				</Router>
+			</CalenderContext.Provider>
+		</DataContext.Provider>
 	);
 }
 

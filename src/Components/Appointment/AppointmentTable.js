@@ -106,7 +106,7 @@ const AppointmentTable = () => {
 							<h4 className="text-primary text-center">{selectAppointment.category}</h4>
 							<h5 className="text-center style-color">{selectAppointment.name}</h5>
 							<p className="text-center text-secondary  small mb-4">
-								On {contextData.date.toLocaleString('default', { month: 'long' })}{' '}
+								On {contextData.date.toLocaleString('default', { month: 'long' })}
 								{contextData.date.getDate()}, {contextData.date.getFullYear()}
 								<br /> Available Time: 9:00 AM - 11:00 AM
 							</p>
