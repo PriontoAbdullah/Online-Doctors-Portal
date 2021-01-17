@@ -1,0 +1,23 @@
+.selector {
+    position: relative;
+}
+.selector select{
+    padding-left: 30px !important;
+    color: lightslategray;
+}
+.selector .icon{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    padding-right: 5px;
+    font-size: 1.2em;
+    border-right: 1px solid lightgray;
+    color: lightslategray;
+
+}
+
+.add-prescription .form-control,
+.add-prescription .btn
+{
+    border-radius: 0 !important;
+}
