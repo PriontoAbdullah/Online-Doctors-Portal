@@ -4,6 +4,7 @@ import './App.css';
 import Appointment from './Pages/Appointment';
 import Login from './Pages/Authentication/Login';
 import Contacts from './Pages/Contacts';
+import Dashboard from './Pages/Dashboard/Dashboard';
 import Home from './Pages/Home';
 import NotFound from './Pages/NotFound';
 import Reviews from './Pages/Reviews';
@@ -12,7 +13,6 @@ export const CalenderContext = createContext();
 
 function App() {
 	const [ loggedInUser, setLoggedInUser ] = useState({});
-	const [ signOutUser, setSignOutUser ] = useState({});
 	const [ allAppointments, setAllAppointments ] = useState([]);
 	const [ allBookedAppointments, setAllBookedAppointments ] = useState([]);
 	const [ allPatients, setAllPatients ] = useState([]);
@@ -32,13 +32,12 @@ function App() {
 	const contextData = {
 		loggedInUser,
 		setLoggedInUser,
-		signOutUser,
-		setSignOutUser,
 		allAppointments,
 		setAllAppointments,
 		allBookedAppointments,
 		setAllBookedAppointments,
 		allPatients,
+		setAllPatients,
 		preLoaderVisibility
 	};
 	const calenderContextValue = { date, setDate };
@@ -62,6 +61,9 @@ function App() {
 							</Route>
 							<Route exact path="/dashboard">
 								<Login />
+							</Route>
+							<Route path="/dashboard/dashboard">
+								<Dashboard />
 							</Route>
 							<Route path="*">
 								<NotFound />
