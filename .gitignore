@@ -13,6 +13,8 @@
 
 # ignore firebase conflig file
 /src/firebase.config.js
+#Firebase Config
+/src/Pages/Authentication/firebase.config.js
 
 # misc
 .DS_Store

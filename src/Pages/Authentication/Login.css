@@ -1,0 +1,205 @@
+* {
+	box-sizing: border-box !important;
+}
+
+.sign-up {
+	background-image: url(../../images/biography-bg.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: bottom;
+	min-height: 100vh;
+	box-sizing: content-box;
+}
+
+.login-page .form-control {
+	border: none;
+	border-radius: 0;
+	border-bottom: 1px solid lightgray;
+	padding-right: 0;
+	padding-left: 0;
+}
+.login-page .form-control:focus {
+	box-shadow: none !important;
+	border-bottom: 1px solid #1cc7c1;
+}
+
+.sign-up form {
+	max-width: 400px;
+	margin: 0 auto;
+}
+.sign-up .form-control {
+	background: #f5f5f5;
+	border: none;
+	padding: 25px 15px !important;
+}
+.error {
+	color: red;
+}
+
+.sign-up .option label {
+	color: red;
+	cursor: pointer;
+}
+
+.forget-text {
+	padding: 0.4rem 0;
+	font-size: 0.9rem;
+	cursor: pointer;
+	color: var(--primary);
+}
+
+.forget-text:hover {
+	color: #f4393e;
+}
+
+.social-text {
+	font-size: 1rem;
+}
+
+.tg-signup-login {
+	padding: 40px 0;
+}
+
+.tg-signup-login .tg-form {
+	max-width: 570px;
+	margin: 0 auto;
+	border-radius: 4px;
+}
+
+.tg-thirdparty-login {
+	text-align: center;
+}
+.tg-thirdparty-login .btn {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 20px;
+	color: #3a4256;
+	background: #ffffff;
+	border: 1px solid #c7c7c7;
+	border-radius: 57px;
+}
+
+.tg-thirdparty-login .btn {
+	width: 461px;
+	margin: 0 auto;
+	height: 51px;
+	text-align: center;
+	padding: 8px;
+	position: relative;
+	display: grid;
+	grid-auto-flow: column;
+	align-items: center;
+	justify-items: baseline;
+	margin-top: 20px;
+}
+
+.form-divider {
+	max-width: 400px;
+	margin: 24px auto;
+	position: relative;
+	display: grid;
+	place-items: center;
+}
+
+.form-divider p {
+	display: inline-block;
+	background: white;
+	position: relative;
+	margin-bottom: 0;
+}
+
+.form-divider:before,
+.form-divider:after {
+	content: "";
+	position: absolute;
+	width: calc(25% - 30px);
+	height: 1px;
+	background: #aaa;
+}
+.form-divider:before {
+	left: 0;
+}
+.form-divider:after {
+	right: 0;
+}
+
+.tg-form .form-control {
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 20px;
+	color: #000;
+	background-color: transparent;
+	border: 0;
+	border-bottom: 1px solid #c5c5c5;
+	border-radius: 0;
+	padding-left: 0;
+	height: 45px;
+}
+
+.tg-form .form-group {
+	margin-bottom: 20px;
+}
+
+.tg-form .form-group.forgot-pass {
+	display: flex;
+	justify-content: space-between;
+}
+
+.tg-form .form-group a,
+.tg-form a {
+	color: var(--primary);
+	text-decoration: underline;
+}
+
+.tg-form .btn-logintoggle {
+	font-weight: normal;
+	color: var(--primary);
+	text-decoration: underline;
+	padding: 0;
+}
+
+.tg-form .btn-logintoggle:hover {
+	color: var(--primary);
+	text-decoration: underline;
+}
+
+.tg-form .register-login {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.tg-form h3 {
+	font-style: normal;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 29px;
+	margin-bottom: 10px;
+	margin-left: 75px;
+	color: #3a4256;
+}
+
+.tg-signup-login .alert {
+	max-width: 570px;
+	margin-bottom: 30px;
+	display: inline-block;
+	text-align: center;
+}
+
+.error-msg {
+	text-align: left;
+	color: rgb(202, 36, 36);
+}
+
+@media (max-width: 500px) {
+	.img-fluid {
+		margin-top: 50px !important;
+		margin-left: 0px !important;
+	}
+}
+
+@media (max-width: 500px) {
+	.tg-thirdparty-login .btn {
+		width: 380px;
+	}
+}
