@@ -20,8 +20,8 @@ const LoginForm = (props) => {
 	};
 
 	const handleResetPassword = () => {
-		resetPassword(resetEmail);
-		handleClose();
+		resetPassword(resetEmail.email);
+		setShow(false);
 	};
 
 	return (
