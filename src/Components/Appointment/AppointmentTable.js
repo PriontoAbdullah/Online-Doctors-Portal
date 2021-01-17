@@ -18,11 +18,34 @@ const AppointmentTable = () => {
 
 	const date = `${contextData.date.getDate()}-${contextData.date.getMonth() + 1}-${contextData.date.getFullYear()}`;
 
+	const makeBooking = (patientInfo) => {
+		setIsBooked(true);
+		const apId = selectAppointment.id;
+		const time = '9:00 AM - 11:00 AM';
+		const dataToStore = { apId, date, time, patientInfo, status: 'Pending' };
+		fetch('http://localhost:5000/makeBooking', {
+			method: 'POST',
+			headers: {
+				'Content-type': 'application/json'
+			},
+			body: JSON.stringify(dataToStore)
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				const newAllBooking = [ ...contextAppointmentData.allBookedAppointments ];
+				newAllBooking.push(data);
+				contextAppointmentData.setAllBookedAppointments(newAllBooking);
+			})
+			.catch((err) => console.log(err));
+	};
+
 	const { register, handleSubmit, errors } = useForm();
 
 	const onSubmit = (data) => {
 		console.log(data);
+		makeBooking(data);
 	};
+
 	const modalController = (apId) => {
 		setModalIsOpen(true);
 		const selectedAp = contextAppointmentData.allAppointments.find((ap) => ap.id === apId);
@@ -30,6 +53,12 @@ const AppointmentTable = () => {
 			setSelectAppointment(selectedAp);
 		}
 	};
+
+	const successView = () => {
+		setIsBooked(false);
+		setModalIsOpen(false);
+	};
+
 	return (
 		<div className="appointments container py-5 mt-5">
 			<h3 className="text-primary text-center my-5">
@@ -66,6 +95,10 @@ const AppointmentTable = () => {
 					<div className="text-center  py-5 my-5">
 						<FontAwesomeIcon className="text-success" style={{ fontSize: '5em' }} icon={faCheckCircle} />
 						<h4 className="mt-5 lead">Appointment Request Sent!</h4>
+						<p className="mt-5 px-3">
+							Please go to Dashboard and Login with your email which you provided into booking appointment to view details.
+						</p>
+						<span className="d-none">{setTimeout(successView, 10000)}</span>
 					</div>
 				) : (
 					selectAppointment && (
