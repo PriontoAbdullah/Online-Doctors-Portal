@@ -4,6 +4,7 @@ import './App.css';
 import Appointment from './Pages/Appointment';
 import Login from './Pages/Authentication/Login';
 import Contacts from './Pages/Contacts';
+import DashBoardAppointments from './Pages/Dashboard/Appointments';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import Home from './Pages/Home';
 import NotFound from './Pages/NotFound';
@@ -36,12 +37,8 @@ function App() {
 			fetch('http://localhost:5000/bookedAppointments')
 				.then((res) => res.json())
 				.then((data) => setAllBookedAppointments(data));
-
-			
 		},
 		[ allBookedAppointments.length ]
-
-		
 	);
 
 	const contextData = {
@@ -79,6 +76,9 @@ function App() {
 						</Route>
 						<Route path="/dashboard/dashboard">
 							<Dashboard />
+						</Route>
+						<Route path="/dashboard/appointment">
+							<DashBoardAppointments />
 						</Route>
 						<Route path="*">
 							<NotFound />
