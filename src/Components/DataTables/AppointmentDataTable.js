@@ -4,6 +4,7 @@ import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Modal from 'react-modal';
 import { DataContext } from '../../App';
+import MeetingLinkModal from './MeetingLinkModal';
 
 const AppointmentDataTable = () => {
 	const ContextData = useContext(DataContext);
@@ -11,7 +12,7 @@ const AppointmentDataTable = () => {
 	const [ modalIsOpen, setModalIsOpen ] = useState(false);
 	const [ editModalIsOpen, setEditModalIsOpen ] = useState(false);
 
-	const openPrescriptionModal = (apId) => {
+	const openMeetingModal = (apId) => {
 		setModalIsOpen(true);
 		const selectedAp = ContextData.allBookedAppointments.find((ap) => ap._id === apId);
 		setSelectAppointment(selectedAp);
@@ -30,6 +31,7 @@ const AppointmentDataTable = () => {
 		const newDataArray = Array.from(ContextData.allBookedAppointments);
 		const selectedIndex = newDataArray.indexOf(selectAppointment);
 
+		//Generating New prescription appending to previous
 		const SelectedApForModify = { ...selectAppointment };
 
 		SelectedApForModify.date = data.date;
@@ -100,7 +102,7 @@ const AppointmentDataTable = () => {
 							Contact
 						</th>
 						<th className="text-secondary" scope="col">
-							Prescription
+							Meeting Link
 						</th>
 						<th className="text-secondary" scope="col">
 							Action
@@ -117,15 +119,15 @@ const AppointmentDataTable = () => {
 							<td>{ap.patientInfo.phone}</td>
 
 							<td className="text-center">
-								{ap.prescription ? (
-									<button onClick={() => openPrescriptionModal(ap._id)} className="btn btn-primary">
+								{ap.meeting ? (
+									<button onClick={() => openMeetingModal(ap._id)} className="btn btn-primary">
 										View
 									</button>
 								) : (
 									<span>
 										<span>Not Added</span>
 										<FontAwesomeIcon
-											onClick={() => openPrescriptionModal(ap._id)}
+											onClick={() => openMeetingModal(ap._id)}
 											className="text-success ml-2"
 											style={{ cursor: 'pointer' }}
 											icon={faPlusCircle}
@@ -245,6 +247,13 @@ const AppointmentDataTable = () => {
 					</form>
 				)}
 			</Modal>
+
+			<MeetingLinkModal
+				modalIsOpen={modalIsOpen}
+				setModalIsOpen={setModalIsOpen}
+				selectAppointment={selectAppointment}
+				setSelectAppointment={setSelectAppointment}
+			/>
 		</>
 	);
 };
