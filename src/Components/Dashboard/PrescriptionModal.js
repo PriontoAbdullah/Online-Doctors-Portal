@@ -17,7 +17,7 @@ const PrescriptionModal = (props) => {
 
 		//Generating New prescription appending to previous
 		const SelectedApForModify = { ...props.selectAppointment };
-		console.log('old', SelectedApForModify);
+
 		const newPrescription = SelectedApForModify.prescription ? Array.from(SelectedApForModify.prescription) : [];
 		newPrescription.push(newPrescript);
 

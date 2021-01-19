@@ -7,6 +7,7 @@ import Contacts from './Pages/Contacts';
 import AddDoctor from './Pages/Dashboard/AddDoctor';
 import DashBoardAppointments from './Pages/Dashboard/Appointments';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import PatientAppointment from './Pages/Dashboard/PatientAppointment';
 import Patients from './Pages/Dashboard/Patients';
 import Prescriptions from './Pages/Dashboard/Prescriptions';
 import Home from './Pages/Home';
@@ -91,6 +92,9 @@ function App() {
 						</Route>
 						<Route path="/dashboard/doctors">
 							<AddDoctor />
+						</Route>
+						<Route path="/dashboard/my-appointment">
+							<PatientAppointment />
 						</Route>
 						<Route path="*">
 							<NotFound />
