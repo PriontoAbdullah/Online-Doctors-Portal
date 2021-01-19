@@ -1,5 +1,5 @@
 import { faFileAlt } from '@fortawesome/free-regular-svg-icons';
-import { faCalendar, faCog, faGripHorizontal, faSignOutAlt, faUser, faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faCalendar, faGripHorizontal, faSignOutAlt, faUser, faUserPlus, faUsers } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
@@ -47,8 +47,8 @@ const Sidebar = () => {
 					</Link>
 				</li>
 				<li>
-					<Link to="/dashboard/setting" className="text-white">
-						<FontAwesomeIcon icon={faCog} /> <span>Setting</span>
+					<Link to="/dashboard/doctors" className="text-white">
+						<FontAwesomeIcon icon={faUserPlus} /> <span>Add Doctor</span>
 					</Link>
 				</li>
 			</ul>

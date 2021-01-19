@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Sidebar from '../../Components/Dashboard/Sidebar';
 import Statistics from '../../Components/Dashboard/Statistics';
 import AppointmentDataTable from '../../Components/DataTables/AppointmentDataTable';
 import DataTable from '../../Components/DataTables/DataTable';
 
 const Dashboard = () => {
+    useEffect(() => {
+		window.scrollTo(0, 0);
+    }, []);
 
     return (
             <div className="container-fluid row " >

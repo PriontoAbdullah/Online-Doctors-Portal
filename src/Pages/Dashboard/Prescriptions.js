@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Sidebar from '../../Components/Dashboard/Sidebar';
 import DataTable from '../../Components/DataTables/DataTable';
 import PrescriptionDataTable from '../../Components/DataTables/PrescriptionDataTable';
 
 const Prescriptions = () => {
+    useEffect(() => {
+		window.scrollTo(0, 0);
+    }, []);
 
     return (
             <div className="container-fluid row " >

@@ -18,7 +18,13 @@ const Doctor = ({ doctorsData }) => {
 
 	return (
 		<div className="single-doctor">
-			<img className="img-fluid doctor-image" src={img} alt="doctor" />
+
+			{!doctorsData.image ? (
+				<img className="img-fluid doctor-image" src={img} alt="doctor" />
+			) : (
+				<img style={{ height: '200px' }} src={`data:image/png;base64,${doctorsData.image.img}`} alt="doctor" />
+			)}
+			
 			<div className="doctor-description">
 				<p className="doctor-category">{category}</p>
 				<h4 className="doctor-name">{name}</h4>

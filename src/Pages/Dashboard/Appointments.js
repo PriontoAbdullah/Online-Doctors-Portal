@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import AdminCalender from '../../Components/Appointment/AdminCalender';
 import Sidebar from '../../Components/Dashboard/Sidebar';
 import DayAppointmentDataTable from '../../Components/DataTables/DayAppointmentDataTable';
 
 const DashBoardAppointments = () => {
+    useEffect(() => {
+		window.scrollTo(0, 0);
+    }, []);
 
     return (
             <div className="container-fluid row " >

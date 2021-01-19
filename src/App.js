@@ -4,6 +4,7 @@ import './App.css';
 import Appointment from './Pages/Appointment';
 import Login from './Pages/Authentication/Login';
 import Contacts from './Pages/Contacts';
+import AddDoctor from './Pages/Dashboard/AddDoctor';
 import DashBoardAppointments from './Pages/Dashboard/Appointments';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import Patients from './Pages/Dashboard/Patients';
@@ -87,6 +88,9 @@ function App() {
 						</Route>
 						<Route path="/dashboard/prescriptions">
 							<Prescriptions />
+						</Route>
+						<Route path="/dashboard/doctors">
+							<AddDoctor />
 						</Route>
 						<Route path="*">
 							<NotFound />
