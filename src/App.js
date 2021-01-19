@@ -6,6 +6,7 @@ import Login from './Pages/Authentication/Login';
 import Contacts from './Pages/Contacts';
 import DashBoardAppointments from './Pages/Dashboard/Appointments';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import Patients from './Pages/Dashboard/Patients';
 import Home from './Pages/Home';
 import NotFound from './Pages/NotFound';
 import Reviews from './Pages/Reviews';
@@ -79,6 +80,9 @@ function App() {
 						</Route>
 						<Route path="/dashboard/appointment">
 							<DashBoardAppointments />
+						</Route>
+						<Route path="/dashboard/patients">
+							<Patients />
 						</Route>
 						<Route path="*">
 							<NotFound />
