@@ -95,10 +95,10 @@ const AppointmentDataTable = () => {
 						<th className="text-secondary" scope="col">
 							Time
 						</th>
-						<th className="text-secondary" scope="col">
+						<th className="text-secondary text-left"scope="col">
 							Name
 						</th>
-						<th className="text-secondary" scope="col">
+						<th className="text-secondary text-left" scope="col">
 							Contact
 						</th>
 						<th className="text-secondary" scope="col">
