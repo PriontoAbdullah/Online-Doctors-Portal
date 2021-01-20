@@ -57,10 +57,10 @@ const Statistics = () => {
 	return (
 		<div className="row my-5">
 			<SingleStatistic classToAdd="bg-danger" data={{ title: 'Pending Appointments', count: pending }} />
-			<SingleStatistic classToAdd="bg-info" data={{ title: 'Today’s Appointments', count: todays }} />
+			<SingleStatistic classToAdd="bg-warning" data={{ title: 'Today’s Appointments', count: todays }} />
 			<SingleStatistic classToAdd="bg-success" data={{ title: 'Total Appointments', count: total }} />
 			<SingleStatistic
-				classToAdd="bg-warning"
+				classToAdd="bg-info"
 				data={{ title: 'Total  Patients', count: ContextData.allPatients.length }}
 			/>
 		</div>

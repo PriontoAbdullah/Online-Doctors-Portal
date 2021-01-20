@@ -77,7 +77,7 @@ const PrescriptionDataTable = () => {
 							Name
 						</th>
 						<th className="text-secondary " scope="col">
-							Contact
+							Appointment ID
 						</th>
 						<th className="text-secondary" scope="col">
 							Disease
@@ -94,7 +94,7 @@ const PrescriptionDataTable = () => {
 							<td>{ap.date}</td>
 							<td>{ap.time}</td>
 							<td>{ap.patientInfo.name}</td>
-							<td>{ap.patientInfo.phone}</td>
+							<td>{`#${ap._id.substr(0, 9)}`}</td>
 
 							<td>
 								<button

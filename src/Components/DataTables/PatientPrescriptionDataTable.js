@@ -65,7 +65,7 @@ const PatientPrescriptionDataTable = () => {
 							<td>{srNo++}</td>
 							<td>{ap.date}</td>
 							<td>{ap.time}</td>
-							<td className="pl-5">{`#${ap.apId}${Math.round(Math.random() * 100 + 99)}`}</td>
+							<td>{`#${ap._id.substr(0, 9)}`}</td>
 							<td>
 								<button
 									onClick={() => openDataDiseaseModal(ap._id, ap.apId)}
@@ -134,7 +134,7 @@ const PatientPrescriptionDataTable = () => {
 								name="problem"
 								className="form-control col-12"
 								rows="3"
-								desabled={true}
+								disabled={true}
 							/>
 						</div>
 						<div className="form-group text-right">
