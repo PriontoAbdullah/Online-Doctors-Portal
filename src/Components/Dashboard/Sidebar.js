@@ -2,7 +2,11 @@ import { faFileAlt } from '@fortawesome/free-regular-svg-icons';
 import {
 	faCalendar,
 	faGripHorizontal,
-	faSignOutAlt,
+
+
+
+
+	faQuoteLeft, faSignOutAlt,
 	faUser,
 	faUserPlus,
 	faUsers
@@ -79,6 +83,11 @@ const Sidebar = () => {
 						<li>
 							<Link to="/dashboard/my-prescriptions" className="text-white">
 								<FontAwesomeIcon icon={faFileAlt} /> <span>My Prescriptions</span>
+							</Link>
+						</li>
+						<li>
+							<Link to="/dashboard/reviews" className="text-white">
+								<FontAwesomeIcon icon={faQuoteLeft} /> <span>Add Review</span>
 							</Link>
 						</li>
 					</>

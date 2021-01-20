@@ -1,10 +1,12 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Appointment from './Pages/Appointment';
 import Login from './Pages/Authentication/Login';
 import Contacts from './Pages/Contacts';
 import AddDoctor from './Pages/Dashboard/AddDoctor';
+import AddReview from './Pages/Dashboard/AddReview';
 import DashBoardAppointments from './Pages/Dashboard/Appointments';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import PatientAppointment from './Pages/Dashboard/PatientAppointment';
@@ -79,27 +81,30 @@ function App() {
 						<Route exact path="/dashboard">
 							<Login />
 						</Route>
-						<Route path="/dashboard/dashboard">
+						<PrivateRoute path="/dashboard/dashboard">
 							<Dashboard />
-						</Route>
-						<Route path="/dashboard/appointment">
+						</PrivateRoute>
+						<PrivateRoute path="/dashboard/appointment">
 							<DashBoardAppointments />
-						</Route>
-						<Route path="/dashboard/patients">
+						</PrivateRoute>
+						<PrivateRoute path="/dashboard/patients">
 							<Patients />
-						</Route>
-						<Route path="/dashboard/prescriptions">
+						</PrivateRoute>
+						<PrivateRoute path="/dashboard/prescriptions">
 							<Prescriptions />
-						</Route>
-						<Route path="/dashboard/doctors">
+						</PrivateRoute>
+						<PrivateRoute path="/dashboard/doctors">
 							<AddDoctor />
-						</Route>
-						<Route path="/dashboard/my-appointment">
+						</PrivateRoute>
+						<PrivateRoute path="/dashboard/my-appointment">
 							<PatientAppointment />
-						</Route>
-						<Route path="/dashboard/my-prescriptions">
+						</PrivateRoute>
+						<PrivateRoute path="/dashboard/my-prescriptions">
 							<PatientPrescription />
-						</Route>
+						</PrivateRoute>
+						<PrivateRoute path="/dashboard/reviews">
+							<AddReview />
+						</PrivateRoute>
 						<Route path="*">
 							<NotFound />
 						</Route>

@@ -106,6 +106,16 @@ p {
 	color: rgba(255, 255, 255, 0.75) !important;
 }
 
+.reviewForm input,
+.doctorForm input {
+	height: 3rem;
+	border: none;
+}
+.reviewForm textarea,
+.doctorForm textarea {
+	border: none;
+}
+
 /* width */
 ::-webkit-scrollbar {
 	width: 8px !important;
