@@ -11,6 +11,7 @@ const AppointmentDataTable = () => {
 	const [ selectAppointment, setSelectAppointment ] = useState(null);
 	const [ modalIsOpen, setModalIsOpen ] = useState(false);
 	const [ editModalIsOpen, setEditModalIsOpen ] = useState(false);
+	const [ paymentModalIsOpen, setPaymentModalIsOpen ] = useState(false);
 
 	const openMeetingModal = (apId) => {
 		setModalIsOpen(true);
@@ -23,6 +24,12 @@ const AppointmentDataTable = () => {
 		const selectedAp = ContextData.allBookedAppointments.find((ap) => ap._id === apId);
 		setSelectAppointment(selectedAp);
 	};
+
+	const openPaymentView = (apId) => {
+		setPaymentModalIsOpen(true);
+		const selectedAp = ContextData.allBookedAppointments.find((ap) => ap._id === apId);
+		setSelectAppointment(selectedAp);
+	}
 
 	const { register, handleSubmit, errors } = useForm();
 
@@ -99,7 +106,7 @@ const AppointmentDataTable = () => {
 							Name
 						</th>
 						<th className="text-secondary text-left" scope="col">
-							Contact
+							Payment Status
 						</th>
 						<th className="text-secondary" scope="col">
 							Meeting Link
@@ -115,8 +122,18 @@ const AppointmentDataTable = () => {
 							<td>{srNo++}</td>
 							<td>{ap.date}</td>
 							<td>{ap.time}</td>
-							<td>{ap.patientInfo.name.substr(0, 15)}</td>
-							<td>{ap.patientInfo.phone}</td>
+							<td>{ap.patientInfo.name.substr(0, 20)}</td>
+							<td className="text-center">
+								{ap.paymentID ? (
+									<button onClick={() => openPaymentView(ap._id)} className="btn btn-success">
+										Paid
+									</button>
+								) : (
+									<span className="text-danger">
+										Not Paid
+									</span>
+								)}
+							</td>
 
 							<td className="text-center">
 								{ap.meeting ? (
@@ -246,6 +263,35 @@ const AppointmentDataTable = () => {
 						</div>
 					</form>
 				)}
+			</Modal>
+
+			<Modal
+				isOpen={paymentModalIsOpen}
+				onRequestClose={() => setPaymentModalIsOpen(false)}
+				style={{
+					overlay: {
+						backgroundColor: 'rgba(130,125,125,0.75)'
+					},
+					content: {
+						top: '50%',
+						left: '50%',
+						right: 'auto',
+						bottom: 'auto',
+						marginRight: '-50%',
+						width: '40%',
+						transform: 'translate(-50%, -50%)'
+					}
+				}}
+			>
+				<div className="px-5 py-3">
+					{selectAppointment && (
+						<div className="text-center  my-5">	
+							<p className="mt-4 px-3">Payment Amount: 700 ৳</p>
+							<p>Payment ID: {selectAppointment.paymentID}</p>
+							<p>Payment Time: {selectAppointment.lastModified}</p>
+						</div>
+					)}
+				</div>
 			</Modal>
 
 			<MeetingLinkModal
