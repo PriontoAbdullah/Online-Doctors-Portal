@@ -2,10 +2,6 @@ import { faFileAlt } from '@fortawesome/free-regular-svg-icons';
 import {
 	faCalendar,
 	faGripHorizontal,
-
-
-
-
 	faQuoteLeft, faSignOutAlt,
 	faUser,
 	faUserPlus,

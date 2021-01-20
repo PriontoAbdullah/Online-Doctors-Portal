@@ -16,6 +16,7 @@ const Login = () => {
 
 	const [ currentUser, setCurrentUser ] = useState({
 		isSignedIn: false,
+		name: '',
 		email: '',
 		password: '',
 		error: '',
@@ -64,7 +65,7 @@ const Login = () => {
 			});
 	};
 
-	// FACEBOOK Sign in
+	// FACEBOOK Sign In
 	const handleFacebookSignIn = () => {
 		const provider = new firebase.auth.FacebookAuthProvider();
 		firebase
@@ -181,14 +182,13 @@ const Login = () => {
 					const newUser = {
 						isSignedIn: true,
 						email: email,
-						name: displayName,
+						name: currentUser.name || displayName,
 						success: true,
 						error: ''
 					};
 					setCurrentUser(newUser);
 
 					setLoggedInUser(newUser);
-					console.log(result.user);
 					history.replace(from);
 				})
 				.catch((error) => {
@@ -223,7 +223,7 @@ const Login = () => {
 						error: ''
 					};
 					setCurrentUser(newUser);
-
+					console.log(result.user);
 					setLoggedInUser(newUser);
 					history.replace(from);
 				})
