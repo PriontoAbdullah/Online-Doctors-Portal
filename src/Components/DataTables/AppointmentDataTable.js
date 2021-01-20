@@ -115,7 +115,7 @@ const AppointmentDataTable = () => {
 							<td>{srNo++}</td>
 							<td>{ap.date}</td>
 							<td>{ap.time}</td>
-							<td>{ap.patientInfo.name}</td>
+							<td>{ap.patientInfo.name.substr(0, 15)}</td>
 							<td>{ap.patientInfo.phone}</td>
 
 							<td className="text-center">

@@ -46,7 +46,8 @@ const CheckoutForm = ({handlePaymentSuccess}) => {
     <div>
       <form onSubmit={handleSubmit}>
       <CardElement />
-      <button type="submit" disabled={!stripe} className="mt-4">
+      
+      <button type="submit" disabled={!stripe} className="mt-4 btn btn-success">
         Pay
       </button>
     </form>

@@ -8,23 +8,6 @@ const stripePromise = loadStripe('pk_test_51I97rxKyA5cevebV0lqDcxe6yTnAXWpBHUTWZ
 const ProcessPayment = ({handlePaymentSuccess}) => {
 	return (
 		<Elements stripe={stripePromise}>
-			{/* <CardElement
-				options={{
-					style: {
-						base: {
-							fontSize: '16px',
-							color: '#424770',
-							'::placeholder': {
-								color: '#aab7c4'
-							}
-						},
-						invalid: {
-							color: '#9e2146'
-						}
-					}
-				}}
-			/> */}
-
             <CheckoutForm handlePaymentSuccess={handlePaymentSuccess}/>
 		</Elements>
 	);

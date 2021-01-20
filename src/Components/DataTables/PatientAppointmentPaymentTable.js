@@ -1,9 +1,9 @@
-import { faPlus, faPlusCircle, faUserMd } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle, faPlusCircle, faUserMd } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useContext, useState } from 'react';
-import { useForm } from 'react-hook-form';
 import Modal from 'react-modal';
 import { DataContext } from '../../App';
+import ProcessPayment from '../ProcessPayment/ProcessPayment';
 
 const PatientAppointmentPaymentTable = () => {
 	const ContextData = useContext(DataContext);
@@ -31,42 +31,36 @@ const PatientAppointmentPaymentTable = () => {
 		setSelectDoctor(selectedDoc);
 	};
 
-	const { register, handleSubmit, errors } = useForm();
-
 	let srNo = 1;
 
-	const onSubmit = (newLink, e) => {
+	const handlePaymentSuccess = (paymentID) => {
 		// Updating Data to DataContext
 		const newDataArray = Array.from(ContextData.allBookedAppointments);
 		const selectedIndex = newDataArray.indexOf(selectAppointment);
 
 		//Generating New prescription appending to previous
 		const SelectedApForModify = { ...selectAppointment };
-		console.log('old', SelectedApForModify);
 
-		SelectedApForModify.meeting = newLink.meeting;
+		SelectedApForModify.paymentID = paymentID;
 		setSelectAppointment(SelectedApForModify);
 		newDataArray.splice(selectedIndex, 1, SelectedApForModify);
 		ContextData.setAllBookedAppointments(newDataArray);
 
 		// Storing Data To Database
-		e.target.reset();
-		console.log(newLink);
+		const paymentData = { id: SelectedApForModify._id, paymentID };
 
-		fetch('http://localhost:5000/addedMeetingLink', {
+		fetch('http://localhost:5000/addedPayment', {
 			method: 'POST',
 			headers: {
 				'Content-type': 'application/json'
 			},
-			body: JSON.stringify(newLink)
+			body: JSON.stringify(paymentData)
 		})
 			.then((res) => res.json())
 			.then((data) => {
 				console.log(data);
 			})
 			.catch((err) => console.log(err));
-
-		setModalIsOpen(false);
 	};
 
 	return (
@@ -111,9 +105,9 @@ const PatientAppointmentPaymentTable = () => {
 							</td>
 
 							<td className="text-center">
-								{ap.payment ? (
+								{ap.paymentID ? (
 									<button onClick={() => openPaymentModal(ap._id)} className="btn btn-primary">
-										View
+										Paid
 									</button>
 								) : (
 									<span>
@@ -150,7 +144,8 @@ const PatientAppointmentPaymentTable = () => {
 					}
 				}}
 			>
-				{selectAppointment && selectDoctor && (
+				{selectAppointment &&
+				selectDoctor && (
 					<form className="px-5 my-3 text-center">
 						<p className="text-center mb-2 mt-3">
 							<small>Appointment To</small>
@@ -203,52 +198,31 @@ const PatientAppointmentPaymentTable = () => {
 				<div className="px-5 py-3">
 					{selectAppointment && (
 						<div>
-							<div className="mb-3 mb-4 d-flex justify-content-between">
-								<span className="text-primary">{selectAppointment.patientInfo.name}</span>
-								<span>Date : {selectAppointment.date}</span>
-								<span>Time : {selectAppointment.time}</span>
-							</div>
-							{selectAppointment.meeting ? (
-								<div>
-									<p>
-										Meeting Link:
-										<a
-											href={selectAppointment.meeting}
-											target="_blank"
-											rel="noopener noreferrer"
-											className="ml-2"
-										>
-											{selectAppointment.meeting}
-										</a>
-									</p>
+							{selectAppointment.paymentID ? (
+								<div className="text-center  my-5">
+									<FontAwesomeIcon
+										className="text-success"
+										style={{ fontSize: '5em' }}
+										icon={faCheckCircle}
+									/>
+									<h4 className="mt-4 lead text-success">Your payment successful</h4>
+									<p className="mt-4 px-3">Payment Amount: 700 ৳</p>
+									<p>Payment ID: {selectAppointment.paymentID}</p>
 								</div>
 							) : (
-								<form className="row add-prescription" onSubmit={handleSubmit(onSubmit)}>
-									<div className="col-12">
-										{errors.meeting && (
-											<span className="text-danger">
-												Meeting Link must not empty ! <br />
-											</span>
-										)}
+								<div>
+									<div className="mb-3 mb-4 text-center">
+										<h5 className="text-primary mb-1">{selectAppointment.patientInfo.name}</h5>
+										<p className="text-secondary mb-0">Date : {selectAppointment.date}</p>
+										<p className="text-secondary mb-0">Time : {selectAppointment.time}</p>
+										<p className="text-success">Pay 700 ৳ </p>
+										<p className="text-warning">
+											For testing purpose type 424242424242..... continually!{' '}
+										</p>
 									</div>
-									<input
-										className="form-control col-10"
-										ref={register({ required: true })}
-										name="meeting"
-										placeholder="Meeting Link"
-										type="text"
-									/>
 
-									<input
-										type="hidden"
-										value={selectAppointment._id}
-										ref={register({ required: true })}
-										name="id"
-									/>
-									<button type="submit" className="btn btn-primary col-1 ml-3">
-										<FontAwesomeIcon icon={faPlus} />
-									</button>
-								</form>
+									<ProcessPayment handlePaymentSuccess={handlePaymentSuccess} />
+								</div>
 							)}
 						</div>
 					)}
