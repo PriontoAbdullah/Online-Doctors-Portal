@@ -79,6 +79,9 @@ const PrescriptionDataTable = () => {
 						<th className="text-secondary " scope="col">
 							Appointment ID
 						</th>
+						<th className="text-secondary " scope="col">
+							Status
+						</th>
 						<th className="text-secondary" scope="col">
 							Disease
 						</th>
@@ -95,6 +98,7 @@ const PrescriptionDataTable = () => {
 							<td>{ap.time}</td>
 							<td>{ap.patientInfo.name}</td>
 							<td>{`#${ap._id.substr(0, 9)}`}</td>
+							<td>{ap.visitingStatus? ap.visitingStatus : 'Not Visited'}</td>
 
 							<td>
 								<button

@@ -42,10 +42,11 @@ const Login = () => {
 			.auth()
 			.signInWithPopup(provider)
 			.then(function(result) {
-				const { displayName, email } = result.user;
+				const { displayName, email, photoURL } = result.user;
 				const newUser = {
 					isSignedIn: true,
 					email: email,
+					photoURL: photoURL,
 					name: displayName
 				};
 				setCurrentUser(newUser);
@@ -70,10 +71,11 @@ const Login = () => {
 			.auth()
 			.signInWithPopup(provider)
 			.then(function(result) {
-				const { displayName, email } = result.user;
+				const { displayName, email, photoURL } = result.user;
 				const newUser = {
 					isSignedIn: true,
 					email: email,
+					photoURL: photoURL,
 					name: displayName
 				};
 				setCurrentUser(newUser);
