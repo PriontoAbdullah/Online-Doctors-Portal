@@ -28,7 +28,7 @@ const MeetingLinkModal = (props) => {
 		e.target.reset();
 		console.log(newLink);
 
-		fetch('http://localhost:5000/addedMeetingLink', {
+		fetch('https://online-doctors-portal.herokuapp.com/addedMeetingLink', {
 			method: 'POST',
 			headers: {
 				'Content-type': 'application/json'

@@ -49,7 +49,7 @@ const PatientAppointmentPaymentTable = () => {
 		// Storing Data To Database
 		const paymentData = { id: SelectedApForModify._id, paymentID };
 
-		fetch('http://localhost:5000/addedPayment', {
+		fetch('https://online-doctors-portal.herokuapp.com/addedPayment', {
 			method: 'POST',
 			headers: {
 				'Content-type': 'application/json'

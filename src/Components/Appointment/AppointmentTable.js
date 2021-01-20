@@ -23,7 +23,7 @@ const AppointmentTable = () => {
 		const apId = selectAppointment.id;
 		const time = '9:00 AM - 11:00 AM';
 		const dataToStore = { apId, date, time, patientInfo, status: 'Pending' };
-		fetch('http://localhost:5000/makeBooking', {
+		fetch('https://online-doctors-portal.herokuapp.com/makeBooking', {
 			method: 'POST',
 			headers: {
 				'Content-type': 'application/json'

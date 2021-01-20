@@ -34,7 +34,7 @@ const AddDoctor = () => {
 		formData.append('hospital', info.hospital);
 		formData.append('img', info.img);
 
-		fetch('http://localhost:5000/addADoctor', {
+		fetch('https://online-doctors-portal.herokuapp.com/addADoctor', {
 			method: 'POST',
 			body: formData
 		})

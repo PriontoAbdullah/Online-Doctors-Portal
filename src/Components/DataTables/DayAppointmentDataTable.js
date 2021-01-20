@@ -28,7 +28,7 @@ const DayAppointmentDataTable = () => {
 		ContextData.setAllBookedAppointments(newDataArray);
 
 		// Storing Data To Database
-		fetch('http://localhost:5000/updateVisitingStatus', {
+		fetch('https://online-doctors-portal.herokuapp.com/updateVisitingStatus', {
 			method: 'POST',
 			headers: {
 				'Content-type': 'application/json'

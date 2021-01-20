@@ -34,7 +34,7 @@ const AddReview = () => {
 
 	const handleReviewSubmit = (event) => {
 		event.preventDefault();
-		fetch('http://localhost:5000/addReview', {
+		fetch('https://online-doctors-portal.herokuapp.com/addReview', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify(newReview)

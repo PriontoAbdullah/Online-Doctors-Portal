@@ -30,7 +30,7 @@ function App() {
 	// Load all Doctors Information
 	useEffect(
 		() => {
-			fetch('http://localhost:5000/doctors').then((res) => res.json()).then((data) => {
+			fetch('https://online-doctors-portal.herokuapp.com/doctors').then((res) => res.json()).then((data) => {
 				setAllAppointments(data);
 				setPreLoaderVisibility(false);
 			});
@@ -41,7 +41,7 @@ function App() {
 	// Load all Appointments and Patients Information
 	useEffect(
 		() => {
-			fetch('http://localhost:5000/bookedAppointments')
+			fetch('https://online-doctors-portal.herokuapp.com/bookedAppointments')
 				.then((res) => res.json())
 				.then((data) => setAllBookedAppointments(data));
 		},

@@ -45,7 +45,7 @@ const PrescriptionDataTable = () => {
 
 		// Storing Data to Database
 
-		fetch('http://localhost:5000/updateDisease', {
+		fetch('https://online-doctors-portal.herokuapp.com/updateDisease', {
 			method: 'POST',
 			headers: {
 				'Content-type': 'application/json'
