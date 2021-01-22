@@ -30,7 +30,9 @@ function App() {
 	// Load all Doctors Information
 	useEffect(
 		() => {
-			fetch('https://online-doctors-portal.herokuapp.com/doctors').then((res) => res.json()).then((data) => {
+			fetch('https://online-doctors-portal.herokuapp.com/doctors')
+				.then((res) => res.json())
+				.then((data) => {
 				setAllAppointments(data);
 				setPreLoaderVisibility(false);
 			});

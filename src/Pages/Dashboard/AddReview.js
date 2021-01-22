@@ -61,7 +61,7 @@ const AddReview = () => {
 	return (
 		<section className="container-fluid row" style={{ backgroundColor: '#F4FDFB', height: '100vh' }}>
 			<Sidebar />
-			<div className="col-md-10 p-4 " style={{ position: 'absolute', right: 0, backgroundColor: '#F4FDFB' }}>
+			<div id="responsive-dashboard" className="col-md-10 p-4 " style={{ position: 'absolute', right: 0, backgroundColor: '#F4FDFB' }}>
 				<h5 className="text-brand my-4 ">Add a Review</h5>
 				<div className="reviewForm">
 					{newReview.success && <p className="text-success">{newReview.success}</p>}

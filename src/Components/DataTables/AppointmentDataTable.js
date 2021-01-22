@@ -192,6 +192,7 @@ const AppointmentDataTable = () => {
 			<Modal
 				isOpen={editModalIsOpen}
 				onRequestClose={() => setEditModalIsOpen(false)}
+				id="modal-responsive"
 				style={{
 					overlay: {
 						backgroundColor: 'rgba(130,125,125,0.75)'
@@ -268,6 +269,7 @@ const AppointmentDataTable = () => {
 			<Modal
 				isOpen={paymentModalIsOpen}
 				onRequestClose={() => setPaymentModalIsOpen(false)}
+				id="modal-responsive"
 				style={{
 					overlay: {
 						backgroundColor: 'rgba(130,125,125,0.75)'

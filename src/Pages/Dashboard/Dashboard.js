@@ -16,9 +16,9 @@ const Dashboard = () => {
 	const patientUser = allPatients.find((ap) => ap.email === loggedInUser.email);
 
 	return (
-		<div className="container-fluid row ">
+		<div className="container-fluid row">
 			<Sidebar />
-			<div className="col-md-10 p-4 pr-5" style={{ position: 'absolute', right: 0, backgroundColor: '#F4FDFB' }}>
+			<div id="responsive-dashboard"className="col-md-10 p-4 pr-5" style={{ position: 'absolute', right: 0, backgroundColor: '#F4FDFB' }}>
 				<h5>Dashboard</h5>
 				{!patientUser ? (
 					<>

@@ -97,6 +97,7 @@ const PatientPrescriptionDataTable = () => {
 			<Modal
 				isOpen={diseaseModalIsOpen}
 				onRequestClose={() => setDiseaseModalIsOpen(false)}
+				id="modal-responsive"
 				style={{
 					overlay: {
 						backgroundColor: 'rgba(130,125,125,0.75)'
@@ -152,6 +153,7 @@ const PatientPrescriptionDataTable = () => {
 			<Modal
 				isOpen={modalIsOpen}
 				onRequestClose={() => setModalIsOpen(false)}
+				id="modal-responsive"
 				style={{
 					overlay: {
 						backgroundColor: 'rgba(130,125,125,0.75)'

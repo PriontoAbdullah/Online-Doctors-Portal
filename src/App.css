@@ -136,3 +136,13 @@ p {
 ::-webkit-scrollbar-thumb:hover {
 	background: rgb(176, 178, 180) !important;
 }
+
+@media (max-width: 800px) {
+	#modal-responsive {
+		width: 90% !important;
+	}
+
+	#responsive-dashboard {
+		margin-top: 450px;
+	}
+}
