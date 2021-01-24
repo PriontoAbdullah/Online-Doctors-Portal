@@ -122,7 +122,7 @@ const AppointmentDataTable = () => {
 							<td>{srNo++}</td>
 							<td>{ap.date}</td>
 							<td>{ap.time}</td>
-							<td>{ap.patientInfo.name.substr(0, 20)}</td>
+							<td>{ap.patientInfo.name.substr(0, 16)}</td>
 							<td className="text-center">
 								{ap.paymentID ? (
 									<button onClick={() => openPaymentView(ap._id)} className="btn btn-success">

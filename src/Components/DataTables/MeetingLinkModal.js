@@ -59,7 +59,7 @@ const MeetingLinkModal = (props) => {
 					right: 'auto',
 					bottom: 'auto',
 					marginRight: '-50%',
-					width: '40%',
+					width: '60%',
 					transform: 'translate(-50%, -50%)'
 				}
 			}}

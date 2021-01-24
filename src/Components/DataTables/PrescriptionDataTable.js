@@ -77,7 +77,7 @@ const PrescriptionDataTable = () => {
 							Name
 						</th>
 						<th className="text-secondary " scope="col">
-							Appointment ID
+							Appointment
 						</th>
 						<th className="text-secondary " scope="col">
 							Status
@@ -96,8 +96,8 @@ const PrescriptionDataTable = () => {
 							<td>{srNo++}</td>
 							<td>{ap.date}</td>
 							<td>{ap.time}</td>
-							<td>{ap.patientInfo.name}</td>
-							<td>{`#${ap._id.substr(0, 9)}`}</td>
+							<td>{ap.patientInfo.name.substr(0, 16)}</td>
+							<td>{`#${ap._id.substr(0, 7)}`}</td>
 							<td>{ap.visitingStatus? ap.visitingStatus : 'Not Visited'}</td>
 
 							<td>
@@ -148,7 +148,7 @@ const PrescriptionDataTable = () => {
 						right: 'auto',
 						bottom: 'auto',
 						marginRight: '-50%',
-						width: '50%',
+						width: '60%',
 						transform: 'translate(-50%, -50%)'
 					}
 				}}

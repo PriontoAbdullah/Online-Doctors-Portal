@@ -94,7 +94,7 @@ const PatientAppointmentPaymentTable = () => {
 							<td>{srNo++}</td>
 							<td>{ap.date}</td>
 							<td>{ap.time}</td>
-							<td>{`#${ap._id.substr(0, 9)}`}</td>
+							<td>{`#${ap._id.substr(0, 7)}`}</td>
 							<td>
 								<button
 									onClick={() => openDataDoctorModal(ap._id, ap.apId)}

@@ -82,12 +82,12 @@ const AppointmentTable = () => {
 						backgroundColor: 'rgba(130,125,125,0.75)'
 					},
 					content: {
-						top: '50%',
+						top: '55%',
 						left: '50%',
 						right: 'auto',
 						bottom: 'auto',
 						marginRight: '-50%',
-						width: '40%',
+						width: '45%',
 						transform: 'translate(-50%, -50%)',
 						
 					}

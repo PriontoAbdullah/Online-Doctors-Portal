@@ -39,7 +39,7 @@ const PatientsDataTable = () => {
 				{ContextData.allPatients.map((patient) => (
 					<tr>
 						<td>{srNo++}</td>
-						<td>{patient.name}</td>
+						<td>{patient.name.substr(0, 16)}</td>
 						<td>{patient.gender}</td>
 						<td>{patient.age}</td>
 						<td>{patient.weight}KG</td>
